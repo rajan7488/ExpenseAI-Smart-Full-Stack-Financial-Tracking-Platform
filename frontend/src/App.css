@@ -1,0 +1,77 @@
+/* Dashboard.css */
+.main-side{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.right-side{
+    width: 100%;
+    /* margin: 3rem 2rem; */
+    padding: 1rem 3rem;
+}
+
+
+.menu {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1.25rem;
+  border-radius: 0.85rem;
+  background: #f3f4f6;
+  color: #111827;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.menu.active {
+  background: linear-gradient(135deg, #0d6efd, #00c9a7);
+  color: white;
+}
+
+
+/* Card Dashboard */
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 1.55rem;
+  padding: 18px 22px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  width: 260px;
+}
+
+.stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #fde2e2;
+  color: #ef4444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  margin: 0;
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.stat-value {
+  margin: 2px 0 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+}
