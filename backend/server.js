@@ -9,8 +9,14 @@ const app = express();
 const server = http.createServer(app);
 
 // ================== 1. GLOBAL CORS & CONFIGURATION MIDDLEWARE ==================
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://127.0.0.1:5173",
+  process.env.FRONTEND_URL, // ✅ Vercel URL from env
+].filter(Boolean);
+
 const corsOptions = {
-  origin: ["http://localhost:5173", "http://127.0.0.1:5173"],
+  origin: allowedOrigins,
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
@@ -32,7 +38,7 @@ app.use(express.urlencoded({ limit: "10mb", extended: true }));
 // ================== 2. SOCKET.IO SERVER INITIALIZATION ==================
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: allowedOrigins, // ✅ reuse same array
     methods: ["GET", "POST"],
     credentials: true,
   },
